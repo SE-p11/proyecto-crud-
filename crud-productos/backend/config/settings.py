@@ -36,12 +36,14 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # Configuracion de la API REST y CORS para permitir solicitudes desde el frontend.
     'rest_framework',
     'corsheaders',
     'productos',
 ]
 
 MIDDLEWARE = [
+# CORS middleware debe ir antes de CommonMiddleware para que funcione correctamente.
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
